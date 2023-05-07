@@ -60,3 +60,30 @@ private Team team;
 극복
 
 - 중간 테이블을 엔티티로 승격시키기!
+
+
+## 속성
+
+@JoinColumn : 외래키 매핑할 때 사용
+
+| 속성 | 설명 | 기본 값 |
+| --- | --- | --- |
+| name | 외래 키 이름 | 필드명_참조하는 테이블의 기본키 컬럼명 |
+| referencedColumnName | 외래 키가 참조하는 대상 테이블의 컬럼명 | 참조하는 테이블의 기본 컬럼명 |
+| foreignKey(DDL) | 외래 키 제약조건 직접 지정 가능 (테이블 생성 시 사용) |  |
+| unique
+nullable instance
+updatable
+columnDefinition
+table | same with @Column attribute |  |
+
+@ManyToOne: 다대일 관계 매핑
+
+| 속성 | 설명 | 기본값 |
+| --- | --- | --- |
+| optional | false로 설정하면 연관된 엔티티가 항상 있어야 함 | true |
+| fetch | 글로벌 패치 전략을 설정 | @ManyToOne : eager
+@OneToMany : lazy |
+| casacade | 연속성 전이 기능을 사용 |  |
+| targetEntity | 연관된 엔티티의 타입 정보 설정
+거의 사용X |  |
